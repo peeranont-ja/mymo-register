@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final SignaturePad mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
+        final SignaturePad mSignaturePad = findViewById(R.id.signature_pad);
 
-        Button mClearButton = (Button) findViewById(R.id.clear_button);
-        Button mSaveButton = (Button) findViewById(R.id.save_button);
+        Button mClearButton = findViewById(R.id.clear_button);
+        Button mSaveButton = findViewById(R.id.save_button);
         mClearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
