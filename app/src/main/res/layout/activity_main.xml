@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.tngp17_001.registermymo.MainActivity">
+
+    <ScrollView
+        android:id="@+id/SCROLLER_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/TEXT_STATUS_ID"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eros leo, facilisis a libero quis, faucibus volutpat magna. Sed quis ex vel sapien elementum fringilla eget ac quam. Proin suscipit volutpat ornare. Sed posuere, erat quis porttitor eleifend, sem nunc laoreet ex, semper pretium ex quam congue odio. Morbi vitae dictum massa. Aenean iaculis fermentum arcu, molestie volutpat diam iaculis ut. Nunc finibus, turpis eu ornare tempor, diam felis lacinia erat, congue luctus metus ante a sem. Mauris dui metus, tempor quis lacus sed, auctor euismod nulla. Ut at lobortis magna. Nam sollicitudin porta nisl, quis consequat sem bibendum at. Proin cursus suscipit tincidunt. Donec lobortis, libero ac mattis eleifend, nibh neque aliquet arcu, quis consequat purus nulla quis ex. Quisque sem orci, vestibulum ac urna sed, mattis maximus est.
+
+Nullam dapibus pulvinar velit at vehicula. Sed euismod congue libero ac faucibus. Praesent suscipit est massa, at rutrum mauris malesuada ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. In eu turpis tellus. Proin turpis dolor, sodales quis scelerisque sed, elementum et nisi. Donec finibus nulla vel sem mollis interdum. Integer id metus in magna tristique dictum id id dolor. Sed nec libero sed sem egestas semper. Ut auctor, sem in consectetur elementum, ante ante iaculis leo, vel dapibus nulla neque consequat lorem. Phasellus arcu tellus, vestibulum in dapibus ut, tincidunt eu erat. Sed pharetra, mauris id rhoncus lobortis, ligula nisl luctus libero, at cursus nisi mauris id est. Donec accumsan, augue id pharetra suscipit, erat magna aliquet velit, sed placerat tortor ligula feugiat ligula. Mauris at eros ultrices, efficitur erat nec, lobortis eros. Aliquam facilisis, lectus et aliquet ornare, tortor ipsum sagittis ante, vitae lacinia erat risus quis tellus. Ut molestie posuere enim non mattis.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam interdum urna ante, feugiat dictum ante viverra quis. Etiam turpis nisl, consequat nec justo eget, rutrum bibendum nisl. Nunc libero nunc, rhoncus eu faucibus vel, dignissim laoreet magna. Cras massa urna, aliquam vitae vulputate sit amet, ultrices pretium ex. Fusce aliquet convallis ultrices. Morbi nec dui dolor. Sed eget tristique augue. Nulla eu nisi sed metus rhoncus vestibulum a vel neque. Etiam vel placerat quam. Aenean rhoncus eros fermentum ante dignissim accumsan. Vivamus semper lacus lectus, vel commodo nisi vestibulum vel. Mauris a tortor euismod, posuere metus sodales, semper justo. Donec vel diam luctus, tincidunt felis at, volutpat metus. Fusce convallis lectus et mauris commodo egestas. Donec sit amet ligula scelerisque, blandit mauris vel, porta nulla.
+
+Duis finibus magna id maximus facilisis. Praesent porta consectetur quam eu posuere. Nam semper lacus at tortor elementum posuere. Cras finibus, mauris dapibus laoreet venenatis, sem magna fermentum neque, sed tempus metus mi non nunc. Nam venenatis ex quis urna maximus, eu mattis urna cursus. Sed ac lobortis augue, vitae tempus diam. Phasellus condimentum posuere orci pretium pellentesque. Integer justo turpis, laoreet eget neque eu, rhoncus dignissim risus. Ut tincidunt sollicitudin lobortis. Pellentesque sit amet turpis imperdiet, cursus felis ac, luctus risus. Praesent tempus lacinia nisi quis tempus. Nullam accumsan elit ut viverra mattis. Nam elementum nibh nec ipsum interdum, eu eleifend libero laoreet. Duis rhoncus purus et ex placerat auctor.
+
+Duis at turpis diam. Duis sit amet purus eu magna ultrices varius. Morbi ex est, auctor et ornare non, aliquam eu justo. Nam eu aliquam justo. Nam convallis lacus sed venenatis iaculis. Curabitur a leo ac tortor lobortis laoreet vel quis quam. Etiam sed elementum mi, sed varius nibh. Integer et leo sed dolor dignissim sagittis ac a metus. Pellentesque posuere turpis quis mauris pretium feugiat. Donec ac odio ligula. Morbi nec blandit massa, eget consequat neque.
+
+Nulla sed sollicitudin leo. Donec faucibus nisl id mi feugiat, vitae pharetra eros feugiat. Integer in pulvinar neque, ut auctor lorem. Vestibulum sit amet elementum lacus, quis congue elit. Duis eros odio, venenatis tristique tortor vitae, sagittis convallis lacus. Donec vitae vehicula urna, sed sagittis lorem. Vivamus vitae ex rhoncus, vestibulum ligula sit amet, tempor turpis. Vivamus blandit gravida sem, vitae iaculis ipsum consequat id. Vestibulum et tincidunt augue. Quisque id porttitor tortor, nec ornare nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque viverra dolor lectus, id sagittis lorem sollicitudin at. Duis aliquet rutrum urna, eget elementum felis vestibulum eu. Phasellus sagittis est non elementum suscipit. In ac est enim. Fusce risus massa, ullamcorper id euismod et, scelerisque lacinia sapien.
+
+Praesent non urna nisi. Curabitur varius molestie nibh. Curabitur vitae tempor sapien. Sed ultrices magna eget placerat fermentum. Fusce suscipit convallis suscipit. Ut a maximus erat. Quisque semper quam ut volutpat fringilla. Nunc ut blandit libero, facilisis scelerisque lorem. Praesent interdum in urna non rutrum. Fusce consectetur auctor velit. Morbi rhoncus orci id sagittis placerat.
+
+Nunc pellentesque sed leo eu condimentum. Phasellus et metus turpis. Aenean et suscipit sem. Ut viverra sed nibh sit amet vulputate. Donec eget tristique diam, id venenatis diam. Ut molestie sem mi, sit amet sodales tellus dictum id. Etiam lacinia aliquam mauris, id sollicitudin ante convallis eget. Sed tortor dui, aliquet vel volutpat eu, cursus hendrerit lectus. Duis tristique felis erat, non gravida purus tincidunt sed. Vivamus dapibus lorem at porttitor rutrum. Curabitur convallis purus felis, auctor porttitor mauris posuere in. Sed et erat porttitor, aliquet nisi maximus, suscipit nibh. Nulla sit amet elementum velit.
+
+Nullam sit amet tincidunt velit, sit amet venenatis ex. Pellentesque id nisi eget velit egestas scelerisque. Maecenas faucibus rhoncus ante at dignissim. Pellentesque sit amet posuere lacus. Praesent sodales, justo sed varius rutrum, nisi lacus euismod nulla, in efficitur ex dolor vitae lacus. Etiam in dui eu ipsum dapibus aliquam. Cras convallis tristique ex, in condimentum quam cursus quis. Fusce cursus sit amet leo vel molestie. Nam hendrerit aliquet pulvinar. Fusce sed nibh a urna vestibulum porta. Morbi ut risus ipsum. Cras sed turpis ex.
+
+Etiam vestibulum fringilla imperdiet. Mauris erat leo, congue nec orci in, convallis ultricies felis. Integer nec ultrices purus, ut volutpat sem. Vivamus sed nisi nisi. Integer interdum in nibh sed cursus. Duis in consequat augue, non porta felis. Vivamus bibendum eleifend orci, eget pretium ipsum. In ac purus pulvinar, pretium elit sit amet, finibus orci. Curabitur condimentum risus eu ante accumsan vestibulum. Sed sollicitudin a dolor quis commodo. Nunc pharetra mauris nec magna ultricies tincidunt. Proin rhoncus ex at nibh dictum aliquet." />
+        />
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_margin="8dp"/>
+
+    <com.github.gcacace.signaturepad.views.SignaturePad xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/signature_pad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1.2"
+        app:penColor="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/clear_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:text="CLEAR"
+            android:textSize="20dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:text="SAVE"
+            android:textSize="20dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
