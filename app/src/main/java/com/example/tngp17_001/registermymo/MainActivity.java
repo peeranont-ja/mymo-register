@@ -1,11 +1,9 @@
 package com.example.tngp17_001.registermymo;
 
 import android.Manifest;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -27,8 +25,6 @@ import android.widget.Toolbar;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
 
-import org.w3c.dom.Text;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -45,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView signDescription;
     private TextView signAgreement;
     private TextView termsAndConditions;
+    private TextView undoSignature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +52,14 @@ public class MainActivity extends AppCompatActivity {
         centerTitle();
 
         mSignaturePad = findViewById(R.id.signature_pad);
-        mClearButton = findViewById(R.id.clear_button);
+//        mClearButton = findViewById(R.id.clear_button);
         mSaveButton = findViewById(R.id.save_button);
         signDescription = findViewById(R.id.sign_description);
         signAgreement = findViewById(R.id.signature_pad_description);
         termsAndConditions = findViewById(R.id.terms_and_conditions_description);
+        undoSignature = findViewById(R.id.undo_signature);
+        undoSignature.setText(Html.fromHtml("<u>แก้ไข</u>"));
+        signDescription.setVisibility(View.INVISIBLE);
 
         termsAndConditions.setText(Html.fromHtml(getString(R.string.test)));
 
@@ -69,14 +69,16 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, "OnStartSigning", Toast.LENGTH_SHORT).show();
                 signDescription.setVisibility(View.INVISIBLE);
 //                signDescription.setText("");
+                undoSignature.setVisibility(View.VISIBLE);
 
             }
 
             @Override
             public void onSigned() {
 //                mSaveButton.setEnabled(true);
-                mClearButton.setEnabled(true);
-                signAgreement.setVisibility(View.VISIBLE);
+//                mClearButton.setEnabled(true);
+//                signAgreement.setVisibility(View.VISIBLE);
+                signAgreement.setText(R.string.agreement);
                 mSaveButton.setVisibility(View.VISIBLE);
 
             }
@@ -85,19 +87,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClear() {
                 signDescription.setVisibility(View.VISIBLE);
 //                mSaveButton.setEnabled(false);
-                mClearButton.setEnabled(false);
-                signAgreement.setVisibility(View.INVISIBLE);
+//                mClearButton.setEnabled(false);
+                signAgreement.setText(R.string.sign_description);
                 mSaveButton.setVisibility(View.INVISIBLE);
+                undoSignature.setVisibility(View.INVISIBLE);
             }
         });
 
-
-        mClearButton.setOnClickListener(new View.OnClickListener() {
+        undoSignature.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 mSignaturePad.clear();
             }
         });
+
+//        mClearButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mSignaturePad.clear();
+//            }
+//        });
 
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override

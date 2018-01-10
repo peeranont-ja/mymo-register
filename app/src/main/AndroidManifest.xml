@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
-        <activity android:name=".MainActivity" android:label="Terms &amp; Conditions">
+        <activity android:name=".MainActivity" android:label="เงื่อนไขและข้อตกลงการใช้บริการ MyMo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
