@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.tngp17_001.registermymo.MainActivity">
 
+
     <ScrollView
         android:id="@+id/SCROLLER_ID"
         android:layout_width="wrap_content"
@@ -21,36 +22,44 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="10dp"
-                android:text="Terms &amp; Conditions"
-                android:textSize="30dp" />
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:paddingRight="20dp"-->
+                <!--android:paddingTop="10dp"-->
+                <!--android:text="Terms &amp; Conditions"-->
+                <!--android:textSize="30dp" />-->
 
             <TextView
-                android:id="@+id/TEXT_STATUS_ID"
+                android:id="@+id/terms_and_conditions_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="40dp"
                 android:paddingRight="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/term_and_condition" />
+                android:text="" />
 
         </LinearLayout>
     </ScrollView>
 
-    <View
-        android:layout_width="match_parent"
+    <FrameLayout
+        android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@android:color/darker_gray" />
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="8dp"
+        android:layout_above="@+id/sign_area" />
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:background="@android:color/darker_gray" />-->
 
     <RelativeLayout
+        android:id="@+id/sign_area"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.2">
@@ -67,10 +76,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="PLEASE SIGN YOUR NAME HERE"
+            android:text="PLEASE SIGN HERE"
             android:textColor="@android:color/darker_gray"
             android:textSize="30dp" />
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:layout_marginLeft="50dp"-->
+            <!--android:layout_marginRight="50dp"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_below="@id/sign_description"-->
+            <!--android:background="@android:color/darker_gray" />-->
+
     </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="8dp"
+        android:layout_above="@+id/signature_pad_description" />
+
+    <TextView
+        android:id="@+id/signature_pad_description"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/agreement"
+        android:visibility="invisible"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,8 +127,9 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:padding="15dp"
-            android:text="CLEAR"
-            android:textSize="20dp" />
+            android:text="@string/clear_btn"
+            android:textSize="20dp"
+            android:enabled="false"/>
 
         <Button
             android:id="@+id/save_button"
@@ -101,8 +141,9 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:padding="15dp"
-            android:text="SAVE"
-            android:textSize="20dp" />
+            android:text="@string/save_btn"
+            android:textSize="20dp"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

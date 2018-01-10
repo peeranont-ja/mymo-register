@@ -1,9 +1,11 @@
 package com.example.tngp17_001.registermymo;
 
 import android.Manifest;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -13,24 +15,36 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatTextView;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity { private static final int REQUEST_EXTERNAL_STORAGE = 1;
+public class MainActivity extends AppCompatActivity {
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private SignaturePad mSignaturePad;
     private Button mClearButton;
     private Button mSaveButton;
+    private TextView signDescription;
+    private TextView signAgreement;
+    private TextView termsAndConditions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +52,45 @@ public class MainActivity extends AppCompatActivity { private static final int R
         verifyStoragePermissions(this);
         setContentView(R.layout.activity_main);
 
-        mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
-        mClearButton = (Button) findViewById(R.id.clear_button);
-        mSaveButton = (Button) findViewById(R.id.save_button);
+        centerTitle();
+
+        mSignaturePad = findViewById(R.id.signature_pad);
+        mClearButton = findViewById(R.id.clear_button);
+        mSaveButton = findViewById(R.id.save_button);
+        signDescription = findViewById(R.id.sign_description);
+        signAgreement = findViewById(R.id.signature_pad_description);
+        termsAndConditions = findViewById(R.id.terms_and_conditions_description);
+
+        termsAndConditions.setText(Html.fromHtml(getString(R.string.test)));
+
+        mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
+            @Override
+            public void onStartSigning() {
+//                Toast.makeText(MainActivity.this, "OnStartSigning", Toast.LENGTH_SHORT).show();
+                signDescription.setVisibility(View.INVISIBLE);
+//                signDescription.setText("");
+
+            }
+
+            @Override
+            public void onSigned() {
+//                mSaveButton.setEnabled(true);
+                mClearButton.setEnabled(true);
+                signAgreement.setVisibility(View.VISIBLE);
+                mSaveButton.setVisibility(View.VISIBLE);
+
+            }
+
+            @Override
+            public void onClear() {
+                signDescription.setVisibility(View.VISIBLE);
+//                mSaveButton.setEnabled(false);
+                mClearButton.setEnabled(false);
+                signAgreement.setVisibility(View.INVISIBLE);
+                mSaveButton.setVisibility(View.INVISIBLE);
+            }
+        });
+
 
         mClearButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +102,7 @@ public class MainActivity extends AppCompatActivity { private static final int R
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
+                Bitmap signatureBitmap = mSignaturePad.getTransparentSignatureBitmap();
                 if (addPngSignatureToGallery(signatureBitmap)) {
                     Toast.makeText(MainActivity.this, "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
                 } else {
@@ -94,10 +144,10 @@ public class MainActivity extends AppCompatActivity { private static final int R
     public void saveBitmapToPNG(Bitmap bitmap, File photo) throws IOException {
         Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(newBitmap);
-        canvas.drawColor(Color.WHITE);
+        canvas.drawColor(Color.TRANSPARENT);
         canvas.drawBitmap(bitmap, 0, 0, null);
         OutputStream stream = new FileOutputStream(photo);
-        newBitmap.compress(Bitmap.CompressFormat.PNG, 80, stream);
+        newBitmap.compress(Bitmap.CompressFormat.PNG, 40, stream);
         stream.close();
     }
 
@@ -157,6 +207,34 @@ public class MainActivity extends AppCompatActivity { private static final int R
                     PERMISSIONS_STORAGE,
                     REQUEST_EXTERNAL_STORAGE
             );
+        }
+    }
+
+    private void centerTitle() {
+        ArrayList<View> textViews = new ArrayList<>();
+
+        getWindow().getDecorView().findViewsWithText(textViews, getTitle(), View.FIND_VIEWS_WITH_TEXT);
+
+        if(textViews.size() > 0) {
+            AppCompatTextView appCompatTextView = null;
+            if(textViews.size() == 1) {
+                appCompatTextView = (AppCompatTextView) textViews.get(0);
+            } else {
+                for(View v : textViews) {
+                    if(v.getParent() instanceof Toolbar) {
+                        appCompatTextView = (AppCompatTextView) v;
+                        break;
+                    }
+                }
+            }
+
+            if(appCompatTextView != null) {
+                ViewGroup.LayoutParams params = appCompatTextView.getLayoutParams();
+                params.width = ViewGroup.LayoutParams.MATCH_PARENT;
+                appCompatTextView.setLayoutParams(params);
+                appCompatTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                appCompatTextView.setTextColor(Color.parseColor("#212121"));
+            }
         }
     }
 

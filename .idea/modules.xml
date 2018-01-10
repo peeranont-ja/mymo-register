@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\TNGP17-001\workspace\mymo-register\RegisterMyMo.iml" filepath="C:\Users\TNGP17-001\workspace\mymo-register\RegisterMyMo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RegisterMyMo.iml" filepath="$PROJECT_DIR$/RegisterMyMo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\TNGP17-001\workspace\mymo-register\app\app.iml" filepath="C:\Users\TNGP17-001\workspace\mymo-register\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mymo-register.iml" filepath="$PROJECT_DIR$/mymo-register.iml" />
     </modules>
   </component>
 </project>
